@@ -99,9 +99,12 @@ li,
         font-weight: bold;
         color: teal;
 
+        &:hover {
+          border-bottom: 1px solid #f87008;
+        }
       }
 
-      .active {
+      .active{
         color: #f87008;
         border-left: 5px solid teal;
       }
