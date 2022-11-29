@@ -23,9 +23,10 @@ export default {
       type: 'string',
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
+      name: 'tools',
+      title: 'Tools',
+      type: 'array',
+      of: [{type: 'string'}],
     },
     {
       name: 'github',

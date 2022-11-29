@@ -3,8 +3,11 @@ import {FiFigma} from 'react-icons/fi'
 import {RiCodeSSlashFill} from 'react-icons/ri'
 import {SiAltiumdesigner} from 'react-icons/si'
 import {FaDatabase} from 'react-icons/fa'
+import { useContextState } from '../context/StateContext'
 
 const Services = () => {
+  const {dark} = useContextState()
+
   return (
     <div className='services'>
       <div className='head'>
@@ -12,7 +15,7 @@ const Services = () => {
         <div className="line" />
       </div>
       <div className="service">
-        <div className="card">
+        <div className="card" style={dark[4]}>
           <div className="logo">
             <FiFigma className="icon"/>
           </div>
@@ -24,7 +27,7 @@ const Services = () => {
             <li>Xd</li>
           </ul>
         </div>
-        <div className="card">
+        <div className="card" style={dark[4]}>
           <div className="logo">
             <RiCodeSSlashFill className="icon"/>
           </div>
@@ -38,7 +41,7 @@ const Services = () => {
             <li>Redux | Flux | Enzyme | Bable</li>
           </ul>
         </div>
-        <div className="card">
+        <div className="card" style={dark[4]}>
           <div className="logo">
             <SiAltiumdesigner className="icon"/>
           </div>
@@ -51,7 +54,7 @@ const Services = () => {
             <li>Figma</li>
           </ul>
         </div>
-        {/* <div className="card">
+        {/* <div className="card" style={dark[4]}>
           <div className="logo">
             <FaDatabase className="icon"/>
           </div>
