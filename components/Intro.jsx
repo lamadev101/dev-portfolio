@@ -2,6 +2,8 @@ import Image from 'next/image'
 import React from 'react'
 import { useContextState } from '../context/StateContext'
 import pp from '../public/img/profile1.png'
+import {BsFacebook, BsLinkedin, BsBehance} from 'react-icons/bs'
+
 
 const Intro = ({setPageIndex}) => {
   const {dark} = useContextState()
@@ -9,7 +11,7 @@ const Intro = ({setPageIndex}) => {
   return (
     <div className='intro'>
       <div className='desc'>
-        <h6>Hi there,</h6>
+        <h4>Hi there,</h4>
         <h2>My name is <span>Karma Lama Ghising</span></h2>
         <h3>I'm a <span>Web Developer</span></h3>
         <p style={dark[5]}>JS and JS framework - library Angular, React, Next JS Developer with hands-on experience in identifying web-based user interactions along with designing & implementing highly-responsive user interface components by deploying React concepts.</p>
@@ -17,6 +19,15 @@ const Intro = ({setPageIndex}) => {
         <div className="btns">
           <button onClick={()=>setPageIndex(3)}>hireMe</button>
           <button onClick={()=>setPageIndex(2)}>myWorks</button>
+        </div>
+
+        <div className="socialMedia">
+          <div>Get-together</div>
+          <span>
+            <a href="https://www.linkedin.com/in/karma-lama-0a2237235/" target="_blank" rel="noreferrer"><BsLinkedin className='linkedin'/></a>
+            <a href="https://www.facebook.com/lama.kgt.99/" target="_blank" rel="noreferrer"><BsFacebook className='facebook'/></a>
+            <a href="https://www.behance.net/swornimkarma" target="_blank" rel="noreferrer"><BsBehance className='behance'/></a>
+          </span>
         </div>
       </div>
       <div className="img">
