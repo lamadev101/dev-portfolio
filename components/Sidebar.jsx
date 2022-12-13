@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useTransition } from 'react'
 import logo from '../public/img/logo.svg';
 import {RiHomeHeartLine} from 'react-icons/ri'
 import {MdOutlineDesignServices} from 'react-icons/md'
@@ -7,15 +7,22 @@ import {SiMinutemailer} from 'react-icons/si'
 import Image from 'next/image';
 import { useContextState } from '../context/StateContext';
 
+const navItems = [
+  {id: 0, name: 'Home', icon: <RiHomeHeartLine/>},
+  {id: 1, name: 'Services', icon: <MdOutlineDesignServices/>},
+  {id: 2, name: 'Portfolio', icon: <SiPolymerproject/>},
+  {id: 3, name: 'Contact', icon: <SiMinutemailer/>},
+]
+
 const Sidebar = ({setPageIndex, pageIndex, setShowSidebar}) => {
-  const navItems = [
-    {id: 0, name: 'Home', icon: <RiHomeHeartLine/>},
-    {id: 1, name: 'Services', icon: <MdOutlineDesignServices/>},
-    {id: 2, name: 'Portfolio', icon: <SiPolymerproject/>},
-    {id: 3, name: 'Contact', icon: <SiMinutemailer/>},
-  ]
   const {dark} = useContextState()
+  const [isPanding, startTransition] = useTransition();
   
+  const pageNavigate = (id)=>{
+    setPageIndex(id);
+    setShowSidebar(false)
+  }
+
   return (
     <div className='sidebar'>
       <div className="header">
@@ -23,7 +30,7 @@ const Sidebar = ({setPageIndex, pageIndex, setShowSidebar}) => {
       </div>
       <ul className="navItems">
         {navItems.map(item=>(
-          <li key={item.id} className={item.id === pageIndex ? 'active' : ''} onClick={()=>{setPageIndex(item.id), setShowSidebar(false)}}>{item.icon} {item.name}</li>
+          <li key={item.id} className={item.id === pageIndex ? 'active' : ''} onClick={()=>{startTransition(()=>pageNavigate(item.id))}}>{item.icon} {item.name}</li>
         ))}
       </ul>
       <div className="footer">

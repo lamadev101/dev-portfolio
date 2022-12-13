@@ -1,15 +1,17 @@
+import { lazy, Suspense, useState } from "react";
 import Sidebar from "../components/Sidebar";
-import Intro from "../components/Intro";
-import Portfolio from "../components/Portfolio";
-import Services from "../components/Services";
-import Contact from "../components/Contact";
-import { useState } from "react";
+const Portfolio = lazy(()=>import('../components/Portfolio'));
+const Intro = lazy(()=>import('../components/Intro'));
+const Services = lazy(()=>import('../components/Services'));
+const Contact = lazy(()=>import('../components/Contact'));
+
 import { RiMoonClearLine } from 'react-icons/ri'
 import { FaSun } from 'react-icons/fa'
 import { GoThreeBars } from 'react-icons/go'
 import { client } from "../lib/client";
 import { useContextState } from "../context/StateContext";
 import Head from "next/head";
+
 
 export default function Home({ projects }) {
   const [pageIndex, setPageIndex] = useState(0);
@@ -30,7 +32,9 @@ export default function Home({ projects }) {
           <Sidebar setShowSidebar={setShowSidebar} setPageIndex={setPageIndex} pageIndex={pageIndex} />
         </div>
         <div className='right'>
-          {pages[pageIndex]}
+          <Suspense fallback={<h1>Loading...</h1>}>
+            {pages[pageIndex]}
+          </Suspense>
         </div>
         <div className='darkModeIcon'>
           {darkMode ? <FaSun className="dayIcon" onClick={() => setDarkMode(false)} /> : <RiMoonClearLine className="nightIcon" onClick={() => setDarkMode(true)} />}
