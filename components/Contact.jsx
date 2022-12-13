@@ -5,6 +5,7 @@ import { FaViber } from 'react-icons/fa'
 import {BsInfoCircle} from 'react-icons/bs'
 
 const Contact = () => {
+  
   return (
     <div className='contact'>
       <div className='head'>
