@@ -8,6 +8,12 @@ import { useContextState } from '../context/StateContext'
 
 const Project = lazy(()=>import('./Project'))
 
+const tags = [
+  { id: 0, name: "UX/UI", key: "ui", icon: <FaFigma/>, active: "active0"},
+  { id: 1, name: "React JS", key: "react", icon: <GrReactjs />, active: "active1" },
+  { id: 2, name: "Next JS", key: "next", icon: <TbBrandNextjs />, active: "active2" },
+  { id: 3, name: "Vanilla JS", key: "vanilla", icon: <FaJsSquare />, active: "active4" },
+]
 
 const Portfolio = ({ projects }) => {
   const { dark } = useContextState();
@@ -15,12 +21,6 @@ const Portfolio = ({ projects }) => {
   const [openImg, setOpenImg] = useState(false);
   const [fullImg, setFullImg] = useState("");
 
-  const tags = [
-    { id: 0, name: "UX/UI", key: "ui", icon: <FaFigma/>, active: "active0"},
-    { id: 1, name: "React JS", key: "react", icon: <GrReactjs />, active: "active1" },
-    { id: 2, name: "Next JS", key: "next", icon: <TbBrandNextjs />, active: "active2" },
-    { id: 3, name: "Vanilla JS", key: "vanilla", icon: <FaJsSquare />, active: "active4" },
-  ]
 
   const filterProjects = projects.filter(({ group }) => group === btnValue)
 
