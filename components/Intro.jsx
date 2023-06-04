@@ -13,8 +13,8 @@ const Intro = ({setPageIndex}) => {
       <div className='desc'>
         <h4>Hi there,</h4>
         <h2>My name is <span>Karma Lama Ghising</span></h2>
-        <h3>I'm a <span>UX/UI Designer & Frontend Developer</span></h3>
-        <p style={dark[5]}>Web developement experience with proficient knowledge of entire software devlopment life cycle and React expertise Adept at using javaScript, CSS and HTML to design the user interface and deploy it effectively in applications. </p>
+        <h3>I'm a <span>UX/UI Designer & FullStack Web Developer</span></h3>
+        <p style={dark[5]}>"Designing seamless experiences and building robust solutions for the digital world."</p>
 
         <div className="btns">
           <button onClick={()=>setPageIndex(3)}>hireMe</button>

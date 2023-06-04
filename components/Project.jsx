@@ -1,7 +1,8 @@
 import React from 'react'
 import { urlFor } from '../lib/client'
-import { GiWorld, GiBoltEye } from 'react-icons/gi'
+import { GiBoltEye } from 'react-icons/gi'
 import { BsGithub } from 'react-icons/bs'
+import { BiLinkExternal} from 'react-icons/bi'
 
 const Project = ({filterProjects, setFullImg, setOpenImg, dark}) => {
   const handleClick = (img) => {
@@ -28,8 +29,8 @@ const Project = ({filterProjects, setFullImg, setOpenImg, dark}) => {
                 </div>
               </div>
               <div className="links">
-                <a href={project.github} target="_blank" rel="noreferrer"><BsGithub /> www.github.com</a>
-                <a href={project.website} target="_blank" rel="noreferrer"><GiWorld /> www.web-app.com</a>
+                <a href={project.github} target="_blank" rel="noreferrer"><BsGithub />Code</a>
+                <a href={project.website} target="_blank" rel="noreferrer"><BiLinkExternal /> Live Demo</a>
               </div>
             </div></>:
             <div className='uiDesign'>
